@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="store">
+    <head>
+        <title>Apartments</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="./dirPagination.js"></script>
+        <script src="./app.js"></script>
+    </head>
+
+    <body ng-controller="StoreController as store">
+        <header>
+            <h1 class="text-center">Apartments</h1>
+            <h4 id="num">Minneapolos, MN: 12 Apartments</h2>
+        </header>
+        <section id="section_1">
+            <ul class="nav nav-pills">
+                <li ng-class="{active:store.isSelected('-popularity')}">
+                    <a href ng-click="store.selectTab('-popularity')">Popularity</a>
+                </li>
+                    <li ng-class="{active:store.isSelected('-price')}">
+                    <a href ng-click="store.selectTab('-price')">Price</a>
+                </li>
+            </ul>
+        </section>
+        <div class="list-group">
+            <div class="list-group-item" dir-paginate="apartment in apartments | orderBy:store.tab | itemsPerPage:5" ng-init="show=false" ng-click="show=!show">
+                <div id="div_1" class="img-wrap">
+                    <img ng-src="{{apartment.image}}" />
+                </div>
+                <div id="div_2">
+                    <h1 id="h_1"><a>{{apartment.name | uppercase}}</a></h1>
+                    <hr>
+                    <p id="h_2">{{apartment.description}}</p>
+                    <p id="from">From</p>
+                    <h1 id="h_3">{{apartment.price | currency}}</h1>
+                    <p id="usd">USD/Month</p>
+                </div>
+                
+                <div id="detail" class="panel" ng-show="show" class="animate-slide">
+                    <h1 class="detailText">Detail View</h1>
+                    <h3 class="detailText">name: {{apartment.name}}</h3>
+                    <p class="detailText">more detail........................more detail........................</p>
+                </div>
+            </div>
+        </div>
+        <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+    </body>
+
+</html>

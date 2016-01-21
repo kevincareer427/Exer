@@ -1,0 +1,70 @@
+body{
+    background-color: #EEEEEE;
+}
+.list-group{
+    margin: 10px;
+    position: relative;
+    clear: both;
+}        
+.list-group-item{
+    margin: 10px;
+}
+.list-group-item:hover{
+    background-color: lightgrey;
+}          
+#div_1 {
+    float: left;
+    width: 55%;
+    height: 400px;;
+    overflow: hidden;
+    margin: 0px;
+}
+#div_2 {
+    height: 400px;
+    overflow: hidden;
+}          
+#h_2{
+    width: 250px;
+}
+#h_3{
+    position: relative;
+    top: 110px;
+    left: 320px;
+    font-size: 50px;
+    color: darkorange;
+}
+#from{
+    position: relative;
+    top: 180px;
+    left: 280px;
+    color: darkorange;
+}
+#usd{
+    position: relative;
+    top: 105px;
+    left: 420px;
+    color: darkorange;
+}
+#section_1{
+    clear:both;
+    float: right;
+    margin: 10px;
+    margin-right: 20px;
+}
+#num{
+    position: relative;
+    left: 20px;
+}
+dir-pagination-controls{
+    position: relative;
+    left:30px;
+}
+#detail{
+    background-color: #EEEEEE;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+}
+.detailText{
+    margin: 10px;
+}
